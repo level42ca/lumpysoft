@@ -41,7 +41,7 @@ function search() {
       intitle:\"index.of./\"
   `;
 
-  if (query[query.length - 1] == ',') {                                               // Check the length of the search term to see if there were
+  if (query.endsWith(',')) {                                               // Check the length of the search term to see if there were
     query = query.slice(0, -1)                                                            // multiple search terms used, then slice the string at
   }    
                                                                                      // every comma.
