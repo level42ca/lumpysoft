@@ -41,13 +41,6 @@ function search() {
       intitle:\"index.of./\"
   `;
 
-  if (query.endsWith(',')) {                                               // Check the length of the search term to see if there were
-    query = query.slice(0, -1)                                                            // multiple search terms used, then slice the string at
-  }    
-                                                                                     // every comma.
-  let arr = query.split(',');                                                                         
-  arr.push(',');
-
   const params = {
     'Video': '(avi|mkv|mov|mp4|mpg|wmv)',
     'Audio': '(ac3|flac|m4a|mp3|ogg|wav|wma)',
@@ -57,20 +50,12 @@ function search() {
     'Compressed': '(apk|exe|iso|rar|tar|zip)'
   }
 
-  for (var i = 0; i < arr.length - 1; i++) {
-    if (arr[i] != "") {
-      var temp = arr[i];
-      var last;
-      temp = temp.replace(/[^\w\s]/gi, '');
-      if (temp != 0) {
-        last = temp.replace(/ /g, ".");
-      }
-      var goodinput = "intext:\"" + last + "\"";
-      var finalquery = `${goodinput} ${params[type]} ${commonToAll}`;
+  let searchTerms = query.split(',');
+  searchTerms = searchTerms.map(term => `intext:${term.trim()}`).join(' ');
 
-      var url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
+  let finalquery = `${searchTerms} ${params[type]} ${commonToAll}`;
 
-      window.open(url, '_blank');
-    }
-  }
+  let url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
+
+  window.open(url, '_blank');
 }
