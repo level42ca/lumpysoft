@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function search() {
-	let type = button.innerText;                                                            // Set the type variable to the value of the button.
-  let query = searchBox.value;                                                            // Create a new blank array.
-  let commonToAll = " -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) " +                  // This string is common to all searches.
-      "-inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wall" +
-      "ywashis) intitle:\"index.of./\" ";
+	let type = button.innerText;
+  let query = searchBox.value;
+  let commonToAll = `
+    -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) 
+    -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)
+      intitle:\"index.of./\"
+  `;
 
   if (query[query.length - 1] == ',') {                                               // Check the length of the search term to see if there were
     query = query.slice(0, -1)                                                            // multiple search terms used, then slice the string at
