@@ -40,7 +40,7 @@ function search() {
     intitle:\"index.of./\"
   `;
 
-  const params = {
+  const extensions = {
     'Video': '(avi|mkv|mov|mp4|mpg|wmv)',
     'Audio': '(ac3|flac|m4a|mp3|ogg|wav|wma)',
     'Ebook': '(CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|txt)',
@@ -52,7 +52,7 @@ function search() {
   let searchTerms = query.split(',');
   searchTerms = searchTerms.map(term => `intext:"${term.trim()}"`).join(' ');
 
-  let finalquery = `${searchTerms} ${params[type]} ${commonToAll}`;
+  let finalquery = `${searchTerms} ${extensions[type]} ${commonToAll}`;
 
   let url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
 
