@@ -35,9 +35,9 @@ function search() {
 	let type = button.innerText;
   let query = searchBox.value;
   let commonToAll = `
-    -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) 
+    -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)
     -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)
-      intitle:\"index.of./\"
+    intitle:\"index.of./\"
   `;
 
   const params = {
@@ -50,11 +50,13 @@ function search() {
   }
 
   let searchTerms = query.split(',');
-  searchTerms = searchTerms.map(term => `intext:"${term.trim()}""`).join(' ');
+  searchTerms = searchTerms.map(term => `intext:"${term.trim()}"`).join(' ');
 
   let finalquery = `${searchTerms} ${params[type]} ${commonToAll}`;
 
   let url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
 
-  window.open(url, '_blank');
+  console.log(finalquery)
+
+  //window.open(url, '_blank');
 }
