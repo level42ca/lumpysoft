@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   searchBox.focus();
-  
 });
 
 function search() {
