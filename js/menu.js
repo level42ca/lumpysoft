@@ -56,7 +56,5 @@ function search() {
 
   let url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
 
-  console.log(finalquery)
-
-  //window.open(url, '_blank');
+  window.open(url, '_blank');
 }
