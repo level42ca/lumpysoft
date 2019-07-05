@@ -45,29 +45,14 @@ function search() {
                                                                                      // every comma.
   let arr = query.split(',');                                                                         
   arr.push(',');
-  
-  switch (type) {                                                                     // Compare the type that was set earlier with the cases below
-    case ("Video"):
-      var extensions = " (avi|mkv|mov|mp4|mpg|wmv)";
-      break;
-    case ("Audio"):
-      var extensions = " (ac3|flac|m4a|mp3|ogg|wav|wma) ";
-      break;
-    case ("Ebook"):
-      var extensions = " (CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|txt)";
-      break;
-    case ("Pictures"):
-      var extensions = " (bmp|gif|jpg|png|psd|tif|tiff) ";
-      break;
-    case ("Software/Games"):
-      var extensions = " (apk|exe|iso|rar|tar|zip) ";
-      break;
-    case ("Compressed"):
-      var extensions = " (7z|bz2|gz|iso|rar|zip) ";
-      break;
-    default:
-      var extensions = " (avi|mkv|mov|mp4|mpg|wmv)";
-      break;
+
+  const params = {
+    'Video': '(avi|mkv|mov|mp4|mpg|wmv)',
+    'Audio': '(ac3|flac|m4a|mp3|ogg|wav|wma)',
+    'Ebook': '(CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|txt)',
+    'Pictures': '(bmp|gif|jpg|png|psd|tif|tiff)',
+    'Software/Games': '(apk|exe|iso|rar|tar|zip)',
+    'Compressed': '(apk|exe|iso|rar|tar|zip)'
   }
 
   for (var i = 0; i < arr.length - 1; i++) {
@@ -79,7 +64,7 @@ function search() {
         last = temp.replace(/ /g, ".");
       }
       var goodinput = "intext:\"" + last + "\"";
-      var finalquery = goodinput + extensions + commonToAll;
+      var finalquery = `${goodinput} ${params[type]} ${commonToAll}`;
 
       var url = `https://www.google.com/search?q=${encodeURIComponent(finalquery)}`;
 
