@@ -50,7 +50,7 @@ function search() {
   }
 
   let searchTerms = query.split(',');
-  searchTerms = searchTerms.map(term => `intext:${term.trim()}`).join(' ');
+  searchTerms = searchTerms.map(term => `intext:"${term.trim()}""`).join(' ');
 
   let finalquery = `${searchTerms} ${params[type]} ${commonToAll}`;
 
