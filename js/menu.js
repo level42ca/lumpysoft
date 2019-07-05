@@ -46,7 +46,7 @@ function search() {
     'Ebook': '(CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|txt)',
     'Pictures': '(bmp|gif|jpg|png|psd|tif|tiff)',
     'Software/Games': '(apk|exe|iso|rar|tar|zip)',
-    'Compressed': '(apk|exe|iso|rar|tar|zip)'
+    'Compressed': '(apk|exe|iso|rar|tar|zip|7z)'
   }
 
   let searchTerms = query.split(',');
