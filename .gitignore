@@ -1,0 +1,4 @@
+**/env
+**/.vscode
+*.DS_Store
+*notes.txt

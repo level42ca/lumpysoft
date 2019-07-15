@@ -119,7 +119,7 @@ li:nth-last-child(2) {
 }
 
 .fa-btc, .fa-paypal {
-    padding-right: 15px;
+    padding: 0 15px 5px 0;
 }
 
 .credits {
