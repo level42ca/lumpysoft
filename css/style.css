@@ -288,4 +288,8 @@ li:nth-last-child(2) {
         left: 0;
         bottom: 0;
     }
+
+    .fa-btc, .fa-paypal {
+        padding-bottom: 0;
+    }
 }
