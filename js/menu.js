@@ -38,7 +38,7 @@ function search() {
   let query = searchBox.value;
   let commonToAll = `
     -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)
-    -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)
+    -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|wallywashis)
     intitle:\"index.of./\"
   `;
 
