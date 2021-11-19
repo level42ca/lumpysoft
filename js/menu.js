@@ -38,14 +38,14 @@ function search() {
   let query = searchBox.value;
   let commonToAll = `
     -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)
-    -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)
+    -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|wallywashis)
     intitle:\"index.of./\"
   `;
 
   const extensions = {
     'Video': '(avi|mkv|mov|mp4|mpg|wmv)',
     'Audio': '(ac3|flac|m4a|mp3|ogg|wav|wma)',
-    'Ebook': '(CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|txt)',
+    'Ebook': '(CBZ|CBR|CHM|DOC|DOCX|EPUB|MOBI|ODT|PDF|RTF|FB2|LIT|LRF|PRC|PDB|PML|RB|TCR|CBC|txt)',
     'Pictures': '(bmp|gif|jpg|png|psd|tif|tiff)',
     'Software/Games': '(apk|exe|ipa|iso|rar|tar|zip)',
     'Compressed': '(apk|exe|iso|rar|tar|zip|7z)'
